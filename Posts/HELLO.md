@@ -1,47 +1,70 @@
-## Welcome to GitHub Pages
+# QBRECT - Hình chữ nhật 0 1
 
-You can use the [editor on GitHub](https://github.com/anhnguyenroux/anhnguyenroux.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+##  Link đề: [Link](https://vn.spoj.com/problems/QBRECT/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+##  Hướng dẫn:
+      Với mỗi vị trí j ta sử dụng thuật toán L,R hoặc deque để tìm ra chỉ số bên trái mà tạo nên cột toàn số 1 nhỏ hơn j và gần j nhất,
+    tương tự cho bên phải từ mảng trên ta có diện tích hình chữ nhật dài nhất tạo bởi phần tử j là cột thấp nhất: s=(chiều cao cột j)*(số
+    cột kề j mà lớn hơn j).
+      Ta duyệt từ đầu xuống theo i để tìm ra kết quả.
+      
+## Code:
+```cpp
+#include <bits/stdc++.h>
+#define VA AnhNguyenProV2
+#define pb push_back
+#define FOR(i, a, b) for(int i = int(a); i <= int(b); i++)
+#define FORD(i, a, b) for(int i = int(a); i >= int(b); i--)
+#define REP(i, r) for(int i = 0; i < r; i++)
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define READFILE freopen("input.txt", "r", stdin)
+#define WRITEFILE freopen("output.txt", "w", stdout);
+#define ii pair<int, int>
+#define ll long long
+#define fi first
+#define se second
+#define MAX 1003 
+using namespace std;
+ 
 
-### Markdown
+int n,m, a[MAX][MAX], h[MAX],r[MAX],l[MAX],res;
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+void Solve()
+{
+	FOR(i,1,n)
+	{
+		h[0]=-1; h[m+1]=-1;
+		FOR(j,1,m)
+			h[j]=a[i][j]*(h[j]+1);
+		FOR(j,1,m)
+		{
+			l[j]=j;
+			while (h[j]<=(h[l[j]-1])) l[j]=l[l[j]-1];
+		}
+		FORD(j,m,1)
+		{
+			r[j]=j;
+			while (h[j]<=h[r[j]+1]) r[j]=r[r[j]+1];
+		}
+		FOR(j,1,m)
+		{
+			res=max(res,(r[j]-l[j]+1)*h[j]);
+		}
+	}
+}
 
-```markdown
+int main()
+{
+    #ifndef ONLINE_JUDGE
+        READFILE;
+    #endif
+    FAST;
+    
+ 	cin >> n >> m;
+ 	FOR(i,1,n) FOR(j,1,m) cin >> a[i][j];
+	Solve(); 
+	cout<<res;
+    return 0;
+}
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
-
-
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anhnguyenroux/anhnguyenroux.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
