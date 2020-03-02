@@ -7,6 +7,9 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+```markdown
+
 <ul>
   {% for post in site.posts %}
     <li>
@@ -15,7 +18,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
   {% endfor %}
 </ul>
 
-```markdown
+
 Syntax highlighted code block
 
 # Header 1
