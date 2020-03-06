@@ -6,7 +6,7 @@ trong test đề, ta thấy thay vì dừng đợi ở trạm 2 thì cho ông t�
 rước thì kết quả cũng i chang :)) nên ta thử dùng tìm kiếm nhị phân. Với mỗi thời gian mình đang chặt kiểm tra xem có đón đủ 
 m khách hay không, nếu đủ thì thử kiểm tra với thời gian nhỏ hơn xem.
 
-##Code mẫu:
+## Code mẫu:
 ```cpp
 #include <bits/stdc++.h>
 #define VA AnhNguyenProV2
@@ -86,7 +86,8 @@ int main()
 
 # Cách 2:
 
-## Hướng dẫn: ta tính thời gian ngồi đợi xe của từng người (thời gian đợi xe của 1 thằng=thời gian xe tới bến - thời gian đến bến),
+## Hướng dẫn: 
+ta tính thời gian ngồi đợi xe của từng người (thời gian đợi xe của 1 thằng=thời gian xe tới bến - thời gian đến bến),
 sau đó sắp xếp thời gian đợi của mỗi người lại, ta tìm được kết quả.
 
 ## Code 
