@@ -1,10 +1,7 @@
 # Cách 1:
 
 ## Hướng dẫn:
-  Ta để ý thấy rằng, thay vì xe phải đi tới nhà rồi đợi nhân viên, thì xe có thể đợi ở bến luôn rồi mới xuất phát, ví dụ như
-trong test đề, ta thấy thay vì dừng đợi ở trạm 2 thì cho ông tài xế ngồi ở nhà chơi 1 đơn vị thời gian, sau đó mới chạy đi 
-rước thì kết quả cũng i chang :)) nên ta thử dùng tìm kiếm nhị phân. Với mỗi thời gian mình đang chặt kiểm tra xem có đón đủ 
-m khách hay không, nếu đủ thì thử kiểm tra với thời gian nhỏ hơn xem.
+  Ta để ý thấy rằng, thay vì xe phải đi tới nhà rồi đợi nhân viên, thì xe có thể đợi ở bến luôn rồi mới xuất phát, ví dụ như trong test đề, ta thấy thay vì dừng đợi ở trạm 2 thì cho ông tài xế ngồi ở nhà chơi 1 đơn vị thời gian, sau đó mới chạy đi rước thì kết quả cũng i chang :)) nên ta thử dùng tìm kiếm nhị phân. Với mỗi thời gian mình đang chặt kiểm tra xem có đón đủ m khách hay không, nếu đủ thì thử kiểm tra với thời gian nhỏ hơn xem.
 
 ## Code mẫu:
 ```cpp
